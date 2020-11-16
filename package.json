@@ -50,5 +50,9 @@
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/CliffCrerar/ion-ng-popover-demo.git"
+  }
 }

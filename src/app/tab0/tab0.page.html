@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Mouse Events</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>The problem with mouse events.</ion-label>
+    </ion-item>
+
+    <ion-item-divider></ion-item-divider>
+
+    <ion-card
+        #outer
+        color="danger"
+        id="outer"
+        (mouseenter)="stateReducer('mouseEnterLeaveOuter', 'enter')"
+        (mouseleave)="stateReducer('mouseEnterLeaveOuter', 'leave')"
+        (mouseover)="stateReducer('mouseOverOutOuter', 'over')"
+        (mouseout)="stateReducer('mouseOverOutOuter', 'out')"
+    >
+        <ion-card-content>
+            <div class="mouse-event-text-container">
+                <div class="mouse-event-text">{{mouseEnterLeaveOuter}}</div>
+                <div class="mouse-event-text">{{mouseOverOutOuter}}</div>
+            </div>
+
+            <ion-card
+                color="success"
+                id="mid"
+                #mid
+                (mouseenter)="stateReducer('mouseEnterLeaveMid', 'enter')"
+                (mouseleave)="stateReducer('mouseEnterLeaveMid', 'leave')"
+                (mouseover)="stateReducer('mouseOverOutMid', 'over')"
+                (mouseout)="stateReducer('mouseOverOutMid', 'out')"
+            >
+
+                <ion-card-content>
+                    <div class="mouse-event-text-container">
+                        <div class="mouse-event-text">{{mouseEnterLeaveMid}}</div>
+                        <div class="mouse-event-text">{{mouseOverOutMid}}</div>
+                    </div>
+
+                    <ion-card
+                        color="warning"
+                        id="inner"
+                        #inner
+                        (mouseenter)="stateReducer('mouseEnterLeaveInner', 'enter')"
+                        (mouseleave)="stateReducer('mouseEnterLeaveInner', 'leave')"
+                        (mouseover)="stateReducer('mouseOverOutInner', 'over')"
+                        (mouseout)="stateReducer('mouseOverOutInner', 'out')"
+                    >
+                        <ion-card-content>
+                            <div class="mouse-event-text-container">
+                                <div class="mouse-event-text">{{mouseEnterLeaveInner}}</div>
+                                <div class="mouse-event-text">{{mouseOverOutInner}}</div>
+                            </div>
+                            <div
+                                color="default"
+                                style="text-align: center; height: 5vh"
+                            >
+                                <ion-text
+                                    align="center"
+                                    width="100%"
+                                    color="primary"
+                                >
+                                    BRING MOUSE HERE
+                                </ion-text>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-card-content>
+            </ion-card>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
